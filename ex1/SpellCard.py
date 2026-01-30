@@ -12,5 +12,8 @@ class SpellCard(Card):
               'effect': 'Deal 3 damage to target'}
         }
         return game_state
-    def resolve_effect(self, targets: list) -> dict
-        pass
+    def resolve_effect(self, targets: list) -> dict:
+        return {
+            'effect':f"{self.effect_type.capitalize()} effect aplied"
+        }
+
