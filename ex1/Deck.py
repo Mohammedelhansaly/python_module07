@@ -10,21 +10,21 @@ class Deck():
     def __init__(self):
         self.cards: list[Card] = []
 
-    def add_card(self, card: Card):
+    def add_card(self, card: Card) -> None:
         self.cards.append(card)
 
-    def remove_card(self, card_name: str):
+    def remove_card(self, card_name: str) -> None:
         for card in self.cards:
             if card.name == card_name:
                 self.cards.remove(card)
 
-    def shuffle(self):
+    def shuffle(self) -> None:
         random.shuffle(self.cards)
 
     def draw_card(self) -> Card:
         return self.cards.pop(0)
 
-    def get_deck_state(self):
+    def get_deck_state(self) -> dict:
         avg = (sum(card.cost for card in self.cards) / len(self.cards)
                if len(self.cards) else 0)
         return {

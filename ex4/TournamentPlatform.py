@@ -3,7 +3,7 @@ import random
 
 
 class TournamentPlatform:
-    def __init__(self):
+    def __init__(self) -> None:
         self.cards: dict[str, TournamentCard] = {}
         self.match_played = 0
 

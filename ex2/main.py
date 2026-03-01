@@ -4,7 +4,7 @@ from ex2.Magical import Magical
 from ex2.EliteCard import EliteCard
 
 
-def main():
+def main() -> None:
     print("=== DataDeck Ability System ===\n")
     print("EliteCard capabilities:")
     methods = [

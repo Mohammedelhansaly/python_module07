@@ -3,7 +3,7 @@ from ex0.Card import Card
 
 
 class basicCard(Card):
-    def play(self, game_state: dict):
+    def play(self, game_state: dict) -> None:
         print(f"{self.name} card played.")
 
 

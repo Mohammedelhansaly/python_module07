@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 
 class Magical(ABC):
-    def __init__(self, mana_cost: int, spell_power: int):
+    def __init__(self, mana_cost: int, spell_power: int) -> None:
         self.mana_cost = mana_cost
         self.spell_power = spell_power
 

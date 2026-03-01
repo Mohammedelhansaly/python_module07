@@ -2,7 +2,7 @@ from ex0.Card import Card
 
 
 class ArtifactCard(Card):
-    def __init__(self, name, cost, rarity, durability, effect):
+    def __init__(self, name, cost, rarity, durability, effect) -> None:
         super().__init__(name, cost, rarity)
         self.durability = durability
         self.effect = effect

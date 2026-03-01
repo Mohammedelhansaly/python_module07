@@ -6,7 +6,7 @@ from .Magical import Magical
 class EliteCard(Card, Combatable, Magical):
     def __init__(self, name: str, cost: int, rarity: str,
                  damage: int, defense_damage: int, mana_cost: int,
-                 spell_power: int):
+                 spell_power: int) -> None:
         Card.__init__(self, name, cost, rarity)
         Combatable.__init__(self, damage, defense_damage)
         Magical.__init__(self, mana_cost, spell_power)
@@ -18,7 +18,7 @@ class EliteCard(Card, Combatable, Magical):
             'effect': 'Elite card summoned to battlefield'
         }
 
-    def attack(self, target):
+    def attack(self, target) -> dict:
         target_name = target if isinstance(target, str) else str(target)
         return {
             "attacker": self.name,
@@ -27,7 +27,7 @@ class EliteCard(Card, Combatable, Magical):
             "combat_type": 'melee'
         }
 
-    def defend(self, incoming_damage: int):
+    def defend(self, incoming_damage: int) -> dict:
         return {
             'defender': self.name,
             'damage_taken': incoming_damage - self.defense_damage,
@@ -35,13 +35,13 @@ class EliteCard(Card, Combatable, Magical):
             'still_alive': (incoming_damage - self.defense_damage) < 0
         }
 
-    def get_combat_stats(self):
+    def get_combat_stats(self) -> dict:
         return {
             'damage': self.damage,
             'defense_damage': self.defense_damage
         }
 
-    def cast_spell(self, spell_name: str, targets: list):
+    def cast_spell(self, spell_name: str, targets: list) -> dict:
         target_names = [target if isinstance(target, str) else str(target)
                         for target in targets]
         return {
@@ -51,7 +51,7 @@ class EliteCard(Card, Combatable, Magical):
             'mana_used': self.mana_cost,
         }
 
-    def channel_mana(self, amount: int):
+    def channel_mana(self, amount: int) -> dict:
         return {
                 'channeled': amount,
                 'total_mana': self.mana_cost + amount

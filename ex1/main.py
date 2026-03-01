@@ -4,7 +4,7 @@ from .SpellCard import SpellCard
 from .Deck import Deck
 
 
-def main():
+def main() -> None:
     print("=== DataDeck Deck Builder ===\n")
     print("Building deck with different card types...")
     creature = CreatureCard("Fire Dragon", 5, "legedary", 7, 5)
